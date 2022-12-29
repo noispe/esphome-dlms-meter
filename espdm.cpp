@@ -29,6 +29,8 @@ namespace esphome
                 receiveBufferIndex++;
 
                 lastRead = currentTime;
+                //fix for ESPHOME 2022.12 -> added 10ms delay
+                delay(10);
             }
 
             if(receiveBufferIndex > 0 && currentTime - lastRead > readTimeout)
